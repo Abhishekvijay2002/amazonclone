@@ -1,5 +1,5 @@
 
-import Footer from '../components/footer'
+
 import GoogleAuthButton from '../components/google/GoogleAuthButton'
 
 function LoginPage() {
