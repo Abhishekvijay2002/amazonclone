@@ -4,32 +4,32 @@ export default function FourGridStyle3() {
   // you can replace all these image URLs + texts
   const keepShopping = [
     {
-      img: "https://m.media-amazon.com/images/I/71vH7UuNGrL._AC_SY550_.jpg",
+      img: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS1ufck4EYFKaGuiudcTLngTcF6ePC2mpOduNTP_qLolV08B9OAa03Es2bj8ttZ_1JCdivDb8c0kqsfGrWeGRKpLVt0Xw0ixTVDSM7oQd2H",
       title: "COOL AND CASUAL Dress",
       price: "₹639.00",
     },
     {
-      img: "https://m.media-amazon.com/images/I/81t6A9tX7zL._AC_SY550_.jpg",
+      img: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSkt_RMc6oMRXEt9Lrfjdm8KOc8YLff2DrvR-SEOjdaD9M5vEtb1YYJMFetrMQQqag72OeozbXqSeli4SkaOaORt8QTggxLqMYVEmjDqcOiBorErqtBMeZccDI",
       title: "Leriya Fashion Midi…",
       price: "₹509.00",
     },
     {
-      img: "https://m.media-amazon.com/images/I/71y7JtD3CGL._AC_SY550_.jpg",
+      img: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSMFuyYpBIxWXZbNjnwryx5XgJpDnBcKoPj1nAo5YON8AY2O3DiZy9VNGusrJCHvXBO76GQXTgIpxMaWHpeJ0AD_ayL-ot_OTvsiVppBBmhtqB5dxtGmzGSf90",
       title: "Lymio Women Maxi…",
       price: "₹839.00",
     },
     {
-      img: "https://m.media-amazon.com/images/I/71l8x3mXPiL._AC_SY550_.jpg",
+      img: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcS46Ez1sy7V842_mABsZe3kFs0UvFMtCheHndZ0oH84GGCFQNGGxGCTcpBU3YhjWvC5zmwJbwpDAf-zafBSRYUO_kLsPe2ff2ZtZoG2T5x42bWN7cnkbdra",
       title: "Dream Beauty Fashio…",
       price: "₹264.00",
     },
   ];
 
   const mostLovedFashion = [
-    "https://m.media-amazon.com/images/I/71vH7UuNGrL._AC_SY550_.jpg",
-    "https://m.media-amazon.com/images/I/81t6A9tX7zL._AC_SY550_.jpg",
-    "https://m.media-amazon.com/images/I/71y7JtD3CGL._AC_SY550_.jpg",
-    "https://m.media-amazon.com/images/I/71l8x3mXPiL._AC_SY550_.jpg",
+    "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR24Pv52_g-frw0RJJWwHuUjxaFnOl4Scn3rJWxp1ZKMPXCk3kxro7VOTrv0nsTPUewaMEF0mT5vSKkD-aHEsPn8ohj14EFlg",
+    "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTp7IJsHlTF5NG3l3WPK929Jj0cHRnCvceiv-pNg10ZV270WirElk-PbD77UlIoW6CWm_4giBa-Vj4HJ3ot3atNI0CzaN76yrKBHrvC9HC8PzptRf7DiXyTYA",
+    "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR8-BhZilQcvDlDdqgMzKywMfvpQllZqS-o3UqgoqitEJ_STQCikF81CAXg4bBrfbLgp4An9Tz63nN13J_1KDy9t2sKjGcVA2NkgPMhIINXpP-QszAY3oS_",
+    "https://images.meesho.com/images/products/161724841/d6hz7_512.avif?width=512",
   ];
 
   return (
@@ -74,7 +74,7 @@ export default function FourGridStyle3() {
 
           <div className="border border-gray-200 h-[300px] flex items-center justify-center bg-white">
             <img
-              src="https://m.media-amazon.com/images/I/71eQvTs56UL._AC_SY550_.jpg"
+              src="https://m.media-amazon.com/images/I/51SP7RHxpcL._AC_UF1000,1000_QL80_.jpg"
               alt="Indoor plants"
               className="h-full w-auto object-cover"
             />
@@ -121,7 +121,7 @@ export default function FourGridStyle3() {
 
           <div className="border border-gray-200 h-[300px] flex items-center justify-center bg-white">
             <img
-              src="https://m.media-amazon.com/images/I/71KYI8cdxHL._AC_SY550_.jpg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuNi41m5JlkngMtghg3mG14CHDtMMdNOF76Q&s"
               alt="International brands"
               className="h-full w-auto object-cover"
             />

@@ -11,6 +11,12 @@ import Categorygrid from '../components/Categorygrid'
 import BudgetSliderSection from '../components/BudgetSliderSection'
 import SingleProductSlider from '../components/SingleProductSlider'
 import { useNavigate } from "react-router-dom";
+import FashionOffer from '../components/FashionOffer'
+import FashionBestdeals from '../components/FashionBestdeals'
+import BestGadgets from '../components/BestGadgets'
+import Bikesoffers from '../components/Bikesoffers'
+import DressOffers from '../components/DressOffers'
+
 
 
 function HomePage() {
@@ -23,21 +29,21 @@ function HomePage() {
   <div className="relative">
     <BudgetSliderSection/>
   </div>
-  <div className="-mt-40 relative z-10">
+  <div className="-mt-80 relative z-10">
     <Categorygrid/>
   </div>
 
   {/* Normal sections */}
-  <div className="pt-10">
+  <div className="pt-10 pb-5">
      <FourGridCategories/>
-      <KitchenDealsSlider/>
-      <KitchenDealsSlider/>
+     <FashionOffer/>
+      <FashionBestdeals/>
       <FourGridStyle3/>
-      <KitchenDealsSlider/>
-      <KitchenDealsSlider/>
+      <BestGadgets/>
+      <Bikesoffers/>
       <SingleProductSlider/>
       <Fourgridtype2/>
-      <KitchenDealsSlider/>
+      <DressOffers/>
       <FourSectionGrid/>
       <KitchenDealsSlider/>
   </div>
@@ -69,10 +75,6 @@ function HomePage() {
     </p>
   </div>
 </div>
-
-<div className="grow h-px bg-gray-300 mb-5"></div>
-
-      <div className="grow h-px bg-gray-300 mb-5"></div>
     </div>
   )
 }

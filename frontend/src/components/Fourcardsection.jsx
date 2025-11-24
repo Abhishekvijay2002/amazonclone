@@ -5,25 +5,25 @@ export default function FourSectionGrid() {
     {
       title: "Best Sellers in Toys & Games",
       bigImage:
-        "https://m.media-amazon.com/images/I/61YVqHdFRxL._AC_SY679_.jpg",
+        "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTejzPZodGVE_J9pFP7tdrwB45rPmqnjZGk83iKIQD4Cstfsz-T3oH0_RXBPg7BXoNS-TOo4zF9XppPwGHKNMnKzGd-7cmxlmSIbYb1Hh3ahWnWfD86zHxR",
       description:
         "Storio Rechargeable Toys Talking Cactus Baby Toys for Kids Dancing Cactus Toys...",
       price: "₹319.00",
       smallImages: [
-        "https://m.media-amazon.com/images/I/71S5k9HGxTL._AC_SY200_.jpg",
-        "https://m.media-amazon.com/images/I/71WuX7VkqWL._AC_SY200_.jpg",
-        "https://m.media-amazon.com/images/I/61Xxr6xkTLL._AC_SY200_.jpg",
-        "https://m.media-amazon.com/images/I/71cQMXCLSvL._AC_SY200_.jpg",
+        "https://assets.ajio.com/medias/sys_master/root/20241212/Qhit/675ac2840f47f80c87f407e2/-1117Wx1400H-4944450000-multi-MODEL.jpg",
+        "https://m.media-amazon.com/images/I/61MgxgHYe0L.jpg",
+        "hhttps://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQiquHR9I3PA7aHDASSYnzVBpL-Kh2JNlCRk8tw1tZd8r-XgfbhZn3gitFQFhjH8to1xP8Wqvkct79f6D8V__WSqyhn8G1f9YpmMnh-8oNAankVIVV7fbs1",
+        "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcREAHy1Jt7Y6rpoDVy94JBtJHyPNJBRuIiPWO-r7czoQEXWXKW4cZRJ2X5M_Pin9z26Cez6KoN0GD-Za7F9nHBVgAakKpTqlUxiTekNt97RSFr8EFca1x5P1g",
       ],
       link: "Explore more",
     },
     {
       title: "Customers’ Most-Loved Products",
       images: [
-        "https://m.media-amazon.com/images/I/71uVVaGKuIL._AC_SY679_.jpg",
-        "https://m.media-amazon.com/images/I/71tO6N9J3rL._AC_SY679_.jpg",
-        "https://m.media-amazon.com/images/I/71E+E7Ad5yL._AC_SY679_.jpg",
-        "https://m.media-amazon.com/images/I/71YBKF7eGQL._AC_SY679_.jpg",
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTIlW6fQicYmTmmtUbCQNpV3RxH4oGmotgUWy0pSmhHd4vHHLpLs6aicvF7LMoRllYDSKZy2CswFKzBGADNz6UD6xl0ATH-IsI7vrcxWIiTBvDgQ6dRwvdP5Q",
+        "https://m.media-amazon.com/images/I/71w0UdhuyeL.jpg",
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRqd2Nw7kqhjCYHcvUQ8TJA4tovawigkxlPhNLe-2cdFDUktyRdVvGlbjY4Y3JeYYJECH-4JKwWxtBh4LSHBMv6MJODjgCq9SxN8hnd51XaT3SG6JVN3-WIUQ",
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSinp4dADrpOs2R3jqwZ9kqQAUOesPAePiUT1A4ECeV4q3zStyjnno71W83Fwel3C9mtEXcN3NbqGm4gj-2DOQGgZbz2ngbwEEtmREraL836paeDP3m5Dtq_g",
       ],
       link: "Explore more",
     },

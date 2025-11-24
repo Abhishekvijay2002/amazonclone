@@ -13,10 +13,10 @@ export default function Fourgridtype2() {
 
           <div className="grid grid-cols-2 gap-3">
             {[
-              { img: "sandbox:/mnt/data/0224d904-320a-4e84-ad0d-023dc749f33d.png", price: "₹389" },
-              { img: "sandbox:/mnt/data/0224d904-320a-4e84-ad0d-023dc749f33d.png", price: "₹499" },
-              { img: "sandbox:/mnt/data/0224d904-320a-4e84-ad0d-023dc749f33d.png", price: "₹499" },
-              { img: "sandbox:/mnt/data/0224d904-320a-4e84-ad0d-023dc749f33d.png", price: "₹2,650" },
+              { img: "https://image.made-in-china.com/43f34j00JFpqocmDLTuk/Bandage-Dress-Manufacturer-European-and-American-Foreign-Trade-High-End-Dress-Spot-Wholesale-New-Style-Jacquard-Hip-Bandage-Skirt-White.jpg", price: "₹389" },
+              { img: "https://static.zara.net/assets/public/f957/6faf/ff4e413098df/073986892342/06147092427-p/06147092427-p.jpg?ts=1749197247080&w=744&f=auto", price: "₹499" },
+              { img: "https://static.zara.net/assets/public/5f6f/1b78/4ff84d1e85d1/c110dbf8ab77/07484088400-p/07484088400-p.jpg?ts=1750242196841&w=744&f=auto", price: "₹499" },
+              { img: "https://static.zara.net/assets/public/b13d/2f63/3165481a82c6/62837dbe8d2a/08346774093-p/08346774093-p.jpg?ts=1753383119491&w=744&f=auto", price: "₹2,650" },
             ].map((item, i) => (
               <div key={i}>
                 <div className="border border-gray-200 h-[140px] flex items-center justify-center bg-white">
@@ -39,7 +39,7 @@ export default function Fourgridtype2() {
 
           <div className="border border-gray-200 h-60 flex items-center justify-center bg-white">
             <img
-              src="sandbox:/mnt/data/0224d904-320a-4e84-ad0d-023dc749f33d.png"
+              src="https://images.indianexpress.com/2018/07/yeh-759.jpg"
               className="h-full object-cover"
             />
           </div>
@@ -58,7 +58,7 @@ export default function Fourgridtype2() {
 
           <div className="border border-gray-200 h-60 flex items-center justify-center bg-white">
             <img
-              src="sandbox:/mnt/data/0224d904-320a-4e84-ad0d-023dc749f33d.png"
+              src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQPOB1XC8835jygGmdssvYDyO1XRKJprVRJrjJCFFb-4ofA9s6eNDc6MLfoIPPsRH7vLR5hTPLtJnIKXEdvVWV7uIPM25ljFKOaQm2RwsQ_jDT2boNKoBg2FQ"
               className="h-full object-contain"
             />
           </div>
@@ -76,7 +76,7 @@ export default function Fourgridtype2() {
                 className="border border-blue-400 w-10 h-10 rounded flex items-center justify-center"
               >
                 <img
-                  src="sandbox:/mnt/data/0224d904-320a-4e84-ad0d-023dc749f33d.png"
+                  src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQPOB1XC8835jygGmdssvYDyO1XRKJprVRJrjJCFFb-4ofA9s6eNDc6MLfoIPPsRH7vLR5hTPLtJnIKXEdvVWV7uIPM25ljFKOaQm2RwsQ_jDT2boNKoBg2FQ"
                   className="w-6"
                 />
               </div>
@@ -93,7 +93,7 @@ export default function Fourgridtype2() {
 
           <div className="border border-gray-200 h-60 flex items-center justify-center bg-white">
             <img
-              src="sandbox:/mnt/data/0224d904-320a-4e84-ad0d-023dc749f33d.png"
+              src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcS-yDMpZhSCq5mcmBZoL-PVONtmEtJ5zJqRV4YV79pE2pA11iOJ9ooK3R_Qf4u1DLx7asS19xsrlHz56Q2yIMhjMltXgTxCtyWmhD-7s3sL19aA5cBvnk5l_A"
               className="h-full object-cover"
             />
           </div>

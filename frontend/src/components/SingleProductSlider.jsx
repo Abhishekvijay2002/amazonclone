@@ -8,7 +8,7 @@ const products = [
     ratingCount: "1,319",
     price: "₹509.00",
     extra: "Save ₹100 with coupon",
-    img: "https://m.media-amazon.com/images/I/81Yf0jL5pIL._AC_SY550_.jpg",
+    img: "https://m.media-amazon.com/images/I/41WI7u+JDNL._AC_UY1100_.jpg",
   },
   {
     title: "Women's Active Dryfit Running T-Shirt",
@@ -16,7 +16,7 @@ const products = [
     ratingCount: "2,014",
     price: "₹699.00",
     extra: "Limited time deal",
-    img: "https://m.media-amazon.com/images/I/71A5vCjZGoL._AC_SY550_.jpg",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB4r2HXmos3qCede9cimp3mnSPCj4fVXIWLw&s",
   },
   {
     title: "Women's Long Sleeve Sports Top",
@@ -24,7 +24,7 @@ const products = [
     ratingCount: "980",
     price: "₹599.00",
     extra: "FREE delivery by Tomorrow",
-    img: "https://m.media-amazon.com/images/I/71pKQe7C2-L._AC_SY550_.jpg",
+    img: "https://m.media-amazon.com/images/I/31Au3JXaK2L.jpg",
   },
 ];
 

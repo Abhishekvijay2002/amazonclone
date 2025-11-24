@@ -100,7 +100,7 @@ export default function BrowsingHistory() {
         <button
           type="button"
           onClick={() => handleScroll("left")}
-          className="hidden md:flex items-center justify-center absolute left-0 top-1/2 -translate-y-1/2 z-20 h-15 w-8 border border-gray-400 bg-white hover:bg-gray-100"
+          className="hidden md:flex items-center justify-center absolute left-0 top-1/2 -translate-y-1/2 z-20 h-15 w-8 border border-gray-400 bg-white hover:bg-gray-100 "
         >
           ‹
         </button>
