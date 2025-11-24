@@ -12,7 +12,6 @@ export default function YourOrdersPage() {
     "https://m.media-amazon.com/images/I/61Z72KpZuqL._AC_SY200_.jpg",
   ];
 
-  // ✅ Fetch Orders
   const loadOrders = async () => {
     try {
       setLoading(true);
@@ -29,7 +28,6 @@ export default function YourOrdersPage() {
     loadOrders();
   }, []);
 
-  // ✅ Cancel Order
   const handleCancel = async (orderId) => {
     if (!window.confirm("Cancel this order?")) return;
 
@@ -46,7 +44,6 @@ export default function YourOrdersPage() {
       <div className="bg-white">
         <div className="max-w-5xl mx-auto px-4 py-6">
 
-          {/* Breadcrumb */}
           <div className="text-xs text-[#007185] mb-2">
             <span className="cursor-pointer hover:underline">Your Account</span>
             <span className="text-gray-500"> › </span>
@@ -55,10 +52,8 @@ export default function YourOrdersPage() {
 
           <h1 className="text-2xl font-semibold mb-4">Your Orders</h1>
 
-          {/* Divider */}
           <div className="border-b border-gray-200 mb-4" />
 
-          {/* Orders */}
           {loading && <p>Loading orders...</p>}
 
           {!loading && orders.length === 0 && (
@@ -73,7 +68,7 @@ export default function YourOrdersPage() {
                 key={order._id}
                 className="border rounded mb-6 bg-gray-50"
               >
-                {/* Order Header */}
+
                 <div className="flex justify-between bg-gray-100 px-4 py-2 text-xs">
                   <div>
                     <p>ORDER PLACED</p>
@@ -97,7 +92,6 @@ export default function YourOrdersPage() {
                   </div>
                 </div>
 
-                {/* Product List */}
                 <div className="p-4 space-y-4">
                   {order.product.map((item, i) => {
                     const product = item.productid || {};
@@ -107,7 +101,6 @@ export default function YourOrdersPage() {
                         key={i}
                         className="flex gap-4 items-center border-b pb-3"
                       >
-                        {/* ✅ Product Image */}
                         <img
                           src={
                             product.image[0]?.[0]?.url ||
@@ -118,7 +111,6 @@ export default function YourOrdersPage() {
                           alt="product"
                         />
 
-                        {/* ✅ Product Name */}
                         <div className="text-sm">
                           <p className="font-semibold">
                             {product.title || "Product Name"}
@@ -146,7 +138,6 @@ export default function YourOrdersPage() {
         </div>
       </div>
 
-      {/* Browsing History */}
       <BrowsingHistory />
 
 

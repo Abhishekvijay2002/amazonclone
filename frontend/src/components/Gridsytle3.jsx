@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function FourGridStyle3() {
-  // you can replace all these image URLs + texts
   const keepShopping = [
     {
       img: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS1ufck4EYFKaGuiudcTLngTcF6ePC2mpOduNTP_qLolV08B9OAa03Es2bj8ttZ_1JCdivDb8c0kqsfGrWeGRKpLVt0Xw0ixTVDSM7oQd2H",
@@ -36,7 +35,6 @@ export default function FourGridStyle3() {
     <div className="bg-gray-700 py-4">
       <div className="max-w-[1500px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-2">
 
-        {/* Card 1 – Keep shopping for */}
         <div className="bg-white p-4 min-h-[460px]">
           <h2 className="font-bold text-lg mb-3">
             Keep shopping for
@@ -65,7 +63,6 @@ export default function FourGridStyle3() {
           </button>
         </div>
 
-        {/* Card 2 – Indoor plants offer */}
         <div className="bg-white p-4 min-h-[460px]">
           <h2 className="font-bold text-lg mb-3 leading-snug">
             Minimum 50% off | <br />
@@ -85,7 +82,6 @@ export default function FourGridStyle3() {
           </button>
         </div>
 
-        {/* Card 3 – Customer Most-Loved Fashion for you */}
         <div className="bg-white p-4 min-h-[460px]">
           <h2 className="font-bold text-lg mb-3 leading-snug">
             Customer Most-Loved <br />
@@ -111,8 +107,6 @@ export default function FourGridStyle3() {
             Explore more
           </button>
         </div>
-
-        {/* Card 4 – International brands */}
         <div className="bg-white p-4 min-h-[460px]">
           <h2 className="font-bold text-lg mb-3 leading-snug">
             Up to 50% off | <br />

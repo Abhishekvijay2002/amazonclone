@@ -5,7 +5,6 @@ export default function Fourgridtype2() {
     <div className="bg-gray-700 py-4">
       <div className="max-w-[1500px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-2">
 
-        {/* Card 1 – Pick up where you left */}
         <div className="bg-white p-4 min-h-[460px]">
           <h2 className="font-bold text-lg mb-3">
             Pick up where you left off
@@ -30,8 +29,6 @@ export default function Fourgridtype2() {
           <button className="text-sm text-[#007185] mt-3">See more</button>
         </div>
 
-
-        {/* Card 2 – Streaming */}
         <div className="bg-white p-4 min-h-[460px]">
           <h2 className="font-bold text-lg mb-3">
             Yeh Meri Family | Season 4 | Streaming Now
@@ -49,8 +46,6 @@ export default function Fourgridtype2() {
           </p>
         </div>
 
-
-        {/* Card 3 – Sports product */}
         <div className="bg-white p-4 min-h-[460px]">
           <h2 className="font-bold text-lg mb-3">
             Best Sellers in Sports, Fitness & Outdoors
@@ -84,8 +79,6 @@ export default function Fourgridtype2() {
           </div>
         </div>
 
-
-        {/* Card 4 – Offer product */}
         <div className="bg-white p-4 min-h-[460px]">
           <h2 className="font-bold text-lg mb-3">
             Up to 70% off | IDAM natural wellness

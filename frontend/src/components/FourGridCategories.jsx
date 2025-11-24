@@ -101,12 +101,11 @@ export default function FourGridCategories() {
       <div className="max-w-[1500px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-2">
         {cards.map((card, idx) => (
           <div key={idx} className="bg-white p-4 min-h-[460px]">
-            {/* Title */}
+
             <h2 className="font-bold text-lg mb-3 leading-snug">
               {card.title}
             </h2>
 
-            {/* 2x2 grid of categories */}
             <div className="grid grid-cols-2 gap-3">
               {card.items.map((item, i) => (
                 <div key={i} className="w-full" onClick={() => navigate("/product")}>
@@ -122,7 +121,6 @@ export default function FourGridCategories() {
               ))}
             </div>
 
-            {/* Link */}
             <button className="text-sm text-[#007185] mt-4" onClick={() => navigate("/product")}>
               {card.linkText}
             </button>

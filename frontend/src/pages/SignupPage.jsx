@@ -1,4 +1,4 @@
-// src/pages/SignupPage.jsx
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import GoogleAuthButton from "../components/google/GoogleAuthButton";
@@ -25,7 +25,6 @@ function SignupPage() {
     const updatedForm = { ...form, [e.target.name]: e.target.value };
     setForm(updatedForm);
 
-    // live password = confirm check
     if (
       (e.target.name === "password" ||
         e.target.name === "confirmpassword") &&
@@ -51,8 +50,6 @@ function SignupPage() {
       setErrors({ passwordMatch: "Passwords do not match" });
       return;
     }
-
-    // Decide email vs phone from one field
     const isEmail = form.mobile.includes("@");
 
     const payload = {

@@ -93,10 +93,8 @@ export default function BrowsingHistory() {
       </h2>
 
       <div className="relative">
-        {/* center dashed divider */}
         <div className="pointer-events-none absolute top-3 bottom-3 left-1/2 border-l border-dashed border-gray-300" />
 
-        {/* Left arrow */}
         <button
           type="button"
           onClick={() => handleScroll("left")}
@@ -105,7 +103,6 @@ export default function BrowsingHistory() {
           ‹
         </button>
 
-        {/* SLIDER */}
         <div
           ref={sliderRef}
           className="flex gap-6 overflow-x-scroll no-scrollbar scroll-smooth px-10 py-2"
@@ -115,7 +112,8 @@ export default function BrowsingHistory() {
               key={index}
               className="min-w-[230px] max-w-[230px] shrink-0"
             >
-              <div className="h-56 flex items-center justify-center mb-2">
+              <div className="h-56 flex items-center justify-center mb-2 hover:border-4 hover:border-[#007185] 
+           hover:rounded-lg ">
                 <img
                   src={item.image}
                   alt={item.title}
@@ -123,7 +121,7 @@ export default function BrowsingHistory() {
                 />
               </div>
 
-              <h3 className="text-xs text-[#007185] leading-tight line-clamp-2 hover:underline cursor-pointer">
+              <h3 className="text-base text-[#007185] leading-tight line-clamp-2 hover:underline cursor-pointer">
                 {item.title}
               </h3>
 
@@ -140,7 +138,6 @@ export default function BrowsingHistory() {
           ))}
         </div>
 
-        {/* Right arrow */}
         <button
           type="button"
           onClick={() => handleScroll("right")}

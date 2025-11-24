@@ -37,13 +37,10 @@ export default function CategorySlider() {
     return (
         <div className="relative w-full bg-white">
 
-            {/* LEFT WHITE BORDER */}
             <div className="absolute left-0 top-0 h-full w-8 bg-white z-20"></div>
 
-            {/* RIGHT WHITE BORDER */}
             <div className="absolute right-0 top-0 h-full w-8 bg-white z-20"></div>
 
-            {/* SLIDER */}
             <div
                 ref={sliderRef}
                 className="flex gap-12 overflow-x-auto scroll-smooth scrollbar-hide px-14 py-6"
@@ -53,7 +50,6 @@ export default function CategorySlider() {
                         key={cat.id}
                         className="flex flex-col items-center shrink-0 cursor-pointer"
                     >
-                        {/* Circle */}
                         <div className="w-26 h-26 rounded-full bg-[#fbeae1] flex items-end justify-center overflow-hidden">
                             <img
                                 src={cat.img}
@@ -62,7 +58,6 @@ export default function CategorySlider() {
                             />
                         </div>
 
-                        {/* Text */}
                         <p className="mt-3 text-base font-medium text-center leading-tight">
                             {cat.title.map((line, i) => (
                                 <span key={i} className="block">
@@ -74,7 +69,6 @@ export default function CategorySlider() {
                 ))}
             </div>
 
-            {/* LEFT BUTTON */}
             <button
                 onClick={scrollLeftBtn}
                 className="absolute left-4 top-1/2 -translate-y-1/2 h-24 w-12 bg-white border-2 border-teal-600 rounded-lg flex items-center justify-center shadow-md z-30"
@@ -82,7 +76,6 @@ export default function CategorySlider() {
                 <span className="text-2xl font-bold">‹</span>
             </button>
 
-            {/* RIGHT BUTTON */}
             <button
                 onClick={scrollRightBtn}
                 className="absolute right-4 top-1/2 -translate-y-1/2 h-24 w-12 bg-white border-2 border-teal-600 rounded-lg flex items-center justify-center shadow-md z-30"

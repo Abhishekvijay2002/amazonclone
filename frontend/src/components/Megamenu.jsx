@@ -1,4 +1,4 @@
-// Megamenu.jsx
+
 import { useNavigate } from "react-router-dom";
 
 export default function AccountMegaMenu({ user }) {
@@ -9,23 +9,19 @@ export default function AccountMegaMenu({ user }) {
 
   const handleTriggerClick = () => {
     if (isLoggedIn) {
-      // Go to account page when logged in
       navigate("/account");
     } else {
-      // Go to login page when not logged in
       navigate("/register/login");
     }
   };
 
   const handleSignInClick = (e) => {
-    // Prevent click bubbling to the trigger (optional but safe)
     e.stopPropagation();
     navigate("/register/login");
   };
 
   return (
     <div className="relative group">
-      {/* Trigger */}
       <button className="text-sm leading-tight" onClick={handleTriggerClick}>
         <div className="flex flex-col text-xs leading-tight mx-3">
           <span className="text-base">
@@ -38,7 +34,6 @@ export default function AccountMegaMenu({ user }) {
         </div>
       </button>
 
-      {/* Mega menu */}
       <div
         className="
           invisible opacity-0 scale-95
@@ -47,20 +42,16 @@ export default function AccountMegaMenu({ user }) {
           absolute left-1/2 -translate-x-[40%] top-full mt-2 z-50
         "
       >
-        {/* Panel with arrow INSIDE */}
         <div className="relative bg-white rounded shadow-lg w-[520px]">
-          {/* Arrow */}
           <div className="absolute -top-2 right-[239px] w-4 h-4">
             <div className="w-4 h-4 bg-white rotate-45"></div>
           </div>
 
           {isLoggedIn ? (
-            /* ================= LOGGED IN PANEL (Your Account cards) ================= */
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-4">Your Account</h3>
 
               <div className="grid grid-cols-2 gap-4 text-sm">
-                {/* Your Orders card */}
                 <button
                   className="flex flex-col items-start  border border-gray-200 rounded-lg px-4 py-3 hover:border-[#f5a623] hover:shadow-sm text-left"
                   onClick={() => navigate("/order")}
@@ -71,7 +62,6 @@ export default function AccountMegaMenu({ user }) {
                   </span>
                 </button> 
 
-                {/* Login & security card */}
                 <button
                   className="flex flex-col items-start  border border-gray-200 rounded-lg px-4 py-3 hover:border-[#f5a623] hover:shadow-sm text-left"
                   onClick={() => navigate("/account")}
@@ -86,9 +76,7 @@ export default function AccountMegaMenu({ user }) {
               </div>
             </div>
           ) : (
-            /* ================= NOT LOGGED IN PANEL (original) ================= */
             <>
-              {/* Sign in */}
               <div className="flex flex-col items-center pt-6 px-6">
                 <button
                   className="w-64 bg-[#FFD814] hover:bg-[#F7CA00] border border-[#FCD200] text-sm font-semibold py-2 rounded-sm text-black"
@@ -109,9 +97,8 @@ export default function AccountMegaMenu({ user }) {
 
               <hr className="my-3 border-gray-200" />
 
-              {/* Lists + Account columns */}
               <div className="flex px-8 pb-6 gap-10 text-sm">
-                {/* Left column */}
+
                 <div className="flex-1">
                   <h3 className="font-semibold mb-2">Your Lists</h3>
                   <ul className="space-y-1 text-gray-700">
@@ -123,10 +110,8 @@ export default function AccountMegaMenu({ user }) {
                   </ul>
                 </div>
 
-                {/* Divider */}
                 <div className="w-px bg-gray-200" />
 
-                {/* Right column */}
                 <div className="flex-[1.4]">
                   <h3 className="font-semibold mb-2">Your Account</h3>
                   <ul className="space-y-1 text-gray-700">

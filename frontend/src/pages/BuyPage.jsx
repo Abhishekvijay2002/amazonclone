@@ -36,7 +36,6 @@ export default function CheckoutPage() {
     loadCart();
   }, []);
 
-  // ✅ Place order
   const handlePlaceOrder = async () => {
     try {
       setProcessing(true);
@@ -60,7 +59,6 @@ export default function CheckoutPage() {
   return (
     <div className="min-h-screen bg-white text-sm font-sans">
 
-      {/* HEADER */}
       <header className="border-b bg-gray-100">
         <div className="max-w-5xl mx-auto flex items-center gap-4 px-4 py-2">
           <span className="text-xl font-bold">amazon</span>
@@ -70,10 +68,8 @@ export default function CheckoutPage() {
 
       <main className="max-w-5xl mx-auto px-4 py-4 grid grid-cols-[3fr,1.2fr] gap-6">
 
-        {/* LEFT SIDE */}
         <section className="space-y-6">
 
-          {/* 1. Address */}
           <div>
             <h2 className="font-semibold mb-2">1. Shipping address</h2>
             <textarea
@@ -83,7 +79,6 @@ export default function CheckoutPage() {
             />
           </div>
 
-          {/* 2. Payment */}
           <div>
             <h2 className="font-semibold mb-2">2. Payment method</h2>
 
@@ -109,13 +104,11 @@ export default function CheckoutPage() {
           </div>
         </section>
 
-        {/* RIGHT SIDE - ORDER SUMMARY */}
         <aside>
           <div className="border p-4 rounded bg-gray-50 space-y-4">
 
             <h3 className="font-semibold text-base">Order Summary</h3>
 
-            {/* ✅ Product List */}
             <div className="space-y-3 max-h-[280px] overflow-y-auto">
               {items.map((item, i) => {
                 const product = item.productid;
@@ -149,7 +142,6 @@ export default function CheckoutPage() {
               })}
             </div>
 
-            {/* Summary */}
             <div className="border-t pt-3 space-y-2 text-xs">
               <div className="flex justify-between">
                 <span>Subtotal:</span>
@@ -167,7 +159,6 @@ export default function CheckoutPage() {
               </div>
             </div>
 
-            {/* ✅ Single Place Order Button */}
             <button
               onClick={handlePlaceOrder}
               disabled={processing}

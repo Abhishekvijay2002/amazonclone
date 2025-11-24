@@ -1,4 +1,4 @@
-// src/components/google/GoogleAuthButton.jsx
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useGoogleLogin } from "@react-oauth/google";
@@ -8,7 +8,7 @@ function GoogleAuthButton() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
-  // Google OAuth hook
+
   const loginWithGoogle = useGoogleLogin({
     flow: "auth-code",
     onSuccess: async (codeResponse) => {
@@ -16,16 +16,14 @@ function GoogleAuthButton() {
         setLoading(true);
         console.log("Google OAuth success, code:", codeResponse);
 
-        // Send code to backend
+ 
         const res = await googleLogin(codeResponse.code);
         console.log("Google login success:", res.data);
-
-        // ✅ Save token + user (same as normal login)
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user", JSON.stringify(res.data.user));
 
         alert("Google login successful ✅");
-        navigate("/"); // go home (or wherever you want)
+        navigate("/"); 
       } catch (err) {
         console.error("Backend Google login error:", err);
         const msg =

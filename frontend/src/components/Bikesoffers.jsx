@@ -50,7 +50,6 @@ export default function Bikesoffers() {
   return (
     <div className="bg-white border border-gray-300 mx-6 my-4 px-6 py-4">
 
-      {/* Header */}
       <div className="flex items-center justify-between mb-3">
         <div className="text-xl font-semibold">
           NO cost EMI up to 24 months | starting at ₹4,433 INR per month
@@ -64,7 +63,7 @@ export default function Bikesoffers() {
       </div>
 
       <div className="relative">
-        {/* Left Arrow */}
+
         <button
           onClick={() => handleScroll("left")}
           className="hidden md:flex items-center justify-center absolute left-0 top-1/2 -translate-y-1/2 z-10 h-12 w-10 border border-gray-400 bg-white hover:bg-gray-100"
@@ -72,7 +71,6 @@ export default function Bikesoffers() {
           ‹
         </button>
 
-        {/* Image Slider */}
         <div
           ref={sliderRef}
           className="flex gap-10 overflow-x-scroll scrollbar-hide scroll-smooth px-12 py-4"
@@ -91,7 +89,6 @@ export default function Bikesoffers() {
           ))}
         </div>
 
-        {/* Right Arrow */}
         <button
           onClick={() => handleScroll("right")}
           className="hidden md:flex items-center justify-center absolute right-0 top-1/2 -translate-y-1/2 z-10 h-12 w-10 border border-gray-400 bg-white hover:bg-gray-100"

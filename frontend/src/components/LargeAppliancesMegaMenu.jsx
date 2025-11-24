@@ -3,12 +3,12 @@ import React from "react";
 export default function LargeAppliancesMegaMenu() {
   return (
     <div
-      className="absolute left-0 top-full mt-1 w-[950px] bg-white border shadow-lg
+      className="absolute left-0 top-full mt-1 w-[950px] bg-white shadow-lg
                  p-6 z-50 hidden group-hover:flex gap-8"
     >
-      {/* LEFT TEXT COLUMNS */}
+
       <div className="flex-1 grid grid-cols-3 gap-8 text-sm text-gray-800">
-        {/* Col 1 */}
+
         <div>
           <h3 className="font-bold mb-1">Air Conditioners</h3>
           <ul className="space-y-1 mb-3">
@@ -35,7 +35,6 @@ export default function LargeAppliancesMegaMenu() {
           </ul>
         </div>
 
-        {/* Col 2 */}
         <div>
           <h3 className="font-bold mb-1">Refrigerators</h3>
           <ul className="space-y-1 mb-3">
@@ -60,7 +59,6 @@ export default function LargeAppliancesMegaMenu() {
           <h3 className="font-bold mb-1 mt-3">Dishwashers</h3>
         </div>
 
-        {/* Col 3 */}
         <div>
           <h3 className="font-bold mb-1">Washing Machines</h3>
           <ul className="space-y-1 mb-3">
@@ -86,11 +84,10 @@ export default function LargeAppliancesMegaMenu() {
         </div>
       </div>
 
-      {/* RIGHT IMAGE CARDS */}
       <div className="w-[360px] flex gap-4 text-center text-sm">
         <div className="flex-1">
           <img
-            src="https://images.pexels.com/photos/3965550/pexels-photo-3965550.jpeg?auto=compress&cs=tinysrgb&w=600"
+            src="https://m.media-amazon.com/images/I/41p7zEgFyjL._SX342_SY445_QL70_FMwebp_.jpg"
             alt="No Cost EMI"
             className="w-full h-40 object-cover mb-2"
           />
@@ -100,7 +97,7 @@ export default function LargeAppliancesMegaMenu() {
 
         <div className="flex-1">
           <img
-            src="https://images.pexels.com/photos/7561150/pexels-photo-7561150.jpeg?auto=compress&cs=tinysrgb&w=600"
+            src="https://m.media-amazon.com/images/I/41lEyYkN4gL._SX342_SY445_QL70_FMwebp_.jpg"
             alt="7 reasons to buy"
             className="w-full h-40 object-cover mb-2"
           />
@@ -110,7 +107,7 @@ export default function LargeAppliancesMegaMenu() {
 
         <div className="flex-1">
           <img
-            src="https://images.pexels.com/photos/3735461/pexels-photo-3735461.jpeg?auto=compress&cs=tinysrgb&w=600"
+            src="https://m.media-amazon.com/images/I/41AAsQiTpkL._SX342_SY445_QL70_FMwebp_.jpg"
             alt="Refrigerators"
             className="w-full h-40 object-cover mb-2"
           />

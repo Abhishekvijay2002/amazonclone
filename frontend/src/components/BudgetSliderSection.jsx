@@ -27,7 +27,6 @@ export default function HeroBackgroundSlider() {
     setIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   };
 
-  // optional: auto-play
   useEffect(() => {
     const id = setInterval(() => {
       setIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
@@ -51,7 +50,6 @@ export default function HeroBackgroundSlider() {
 
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 sm:h-32 bg-linear-to-t from-[#e3e6e6] to-transparent" />
 
-      {/* Left arrow */}
       <button
         onClick={prevSlide}
         className="absolute left-4 top-[20%]
@@ -64,7 +62,6 @@ export default function HeroBackgroundSlider() {
         ‹
       </button>
 
-      {/* Right arrow */}
       <button
         onClick={nextSlide}
         className="absolute right-4 top-[20%]

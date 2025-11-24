@@ -33,7 +33,7 @@ function HomePage() {
     <Categorygrid/>
   </div>
 
-  {/* Normal sections */}
+
   <div className="pt-10 pb-5">
      <FourGridCategories/>
      <FashionOffer/>

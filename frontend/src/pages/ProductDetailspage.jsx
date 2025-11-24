@@ -1,5 +1,4 @@
 
-// src/pages/ProductDetailsPage.jsx
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import BrowsingHistory from "../components/BrowsingHistory";
@@ -24,7 +23,7 @@ export default function ProductDetailsPage() {
   const [rating, setRating] = useState(5);
   const [comment, setComment] = useState("");
 
-  // ✅ Fetch product details
+  //  Fetch product details
   const fetchProduct = async () => {
     try {
       setLoading(true);
@@ -37,7 +36,7 @@ export default function ProductDetailsPage() {
     }
   };
 
-  // ✅ Fetch reviews
+  // Fetch reviews
   const fetchReviews = async () => {
     try {
       const res = await getReviewsByProduct(productId);
@@ -54,17 +53,17 @@ export default function ProductDetailsPage() {
     }
   }, [productId]);
 
-  // ✅ Add to cart
+  // Add to cart
   const handleAddToCart = async () => {
     try {
       await addToCart(productId);
-      alert("Product added to cart ✅");
+      alert("Product added to cart ");
     } catch (err) {
       alert("Failed to add to cart");
     }
   };
 
-  // ✅ Add review
+  //  Add review
   const handleAddReview = async (e) => {
     e.preventDefault();
     if (!comment.trim()) return alert("Comment is required");
@@ -75,7 +74,7 @@ export default function ProductDetailsPage() {
       setComment("");
       setRating(5);
       await fetchReviews();
-      alert("Review added ✅");
+      alert("Review added ");
     } catch (err) {
       alert("Failed to add review");
     } finally {
@@ -83,7 +82,7 @@ export default function ProductDetailsPage() {
     }
   };
 
-  // ✅ Delete review
+  // Delete review
   const handleDeleteReview = async (reviewId) => {
     if (!window.confirm("Delete this review?")) return;
 
@@ -130,7 +129,7 @@ export default function ProductDetailsPage() {
         </div>
       </div>
 
-      {/* ✅ REVIEWS SECTION */}
+      {/* REVIEWS SECTION */}
       <div className="mt-8 border-t pt-6">
         <h2 className="text-lg font-semibold mb-4">Customer Reviews</h2>
 

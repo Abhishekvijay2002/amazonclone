@@ -9,7 +9,6 @@ function MainFooter() {
           Back to Top
         </div>
 
-        {/* Main Links Section */}
         <div className="max-w-6xl mx-auto py-10 px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-base">
 
           <div>

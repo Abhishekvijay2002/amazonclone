@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 function MainHeader() {
   const [user, setUser] = useState(() => {
-    // ✅ Read once on initial mount
     try {
       const stored = localStorage.getItem("user");
       return stored ? JSON.parse(stored) : null;
@@ -23,14 +22,13 @@ function MainHeader() {
       <div>
         <div className="bg-[#131921] text-white  py-2 h-[75px]">
           <div className="flex items-center ml-7 gap-5">
-            {/* Amazon Logo */}
+
             <img
               src="/amazonlogo3.png"
               alt="amazon logo"
               className="h-12 w-auto my-2"
             />
 
-            {/* Deliver To */}
             <div className="flex flex-col text-xs leading-tight">
               <span className="text-gray-400 pl-6 text-base">
                 Delivering to Surat 394210
@@ -40,7 +38,6 @@ function MainHeader() {
               </span>
             </div>
 
-            {/* Search Bar */}
             <div className="flex grow max-w-lg  h-13 bg-white rounded-3xl">
               <select className="bg-gray-200 text-black px-2 rounded-l text-xl">
                 <option>All</option>
@@ -57,7 +54,6 @@ function MainHeader() {
               </button>
             </div>
 
-            {/* Language */}
             <div className="flex items-center gap-1 mx-3">
               <img src="https://flagcdn.com/w40/in.png" className="w-7 h-6" />
               <span className="text-xl">EN</span>
@@ -85,7 +81,6 @@ function MainHeader() {
         </div>
       </div>
 
-      {/* bottom bar… (unchanged) */}
       <div className="grid grid-cols-[auto,1fr,auto] px-4 bg-[#232f3e]">
         <div className="flex  text-white text-lg py-1 whitespace-nowrap overflow-hidden">
           <span className="font-bold flex items-center hover:border hover:border-white px-2 py-2">☰ All</span>

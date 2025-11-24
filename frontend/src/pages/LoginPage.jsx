@@ -9,20 +9,19 @@ function LoginPage() {
 
   const [emailOrPhone, setEmailOrPhone] = useState("");
   const [password, setPassword] = useState("");
-  const [step, setStep] = useState(1); // 1 = email step, 2 = password step
+  const [step, setStep] = useState(1); 
   const [loading, setLoading] = useState(false);
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token");
-  //   if (token) {
-  //     navigate("/");
-  //   }
-  // }, [navigate]);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      navigate("/");
+    }
+  }, [navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // STEP 1: Email / phone only
     if (step === 1) {
       if (!emailOrPhone.trim()) {
         alert("Please enter your email or mobile phone number.");
@@ -32,7 +31,6 @@ function LoginPage() {
       return;
     }
 
-    // STEP 2: Password check
     if (!password.trim()) {
       alert("Please enter your password.");
       return;
@@ -42,14 +40,12 @@ function LoginPage() {
       setLoading(true);
 
       const res = await userLogin({
-        email: emailOrPhone, // email OR phone
+        email: emailOrPhone, 
         password,
       });
 
-      // ✅ Save token
       localStorage.setItem("token", res.data.token);
 
-      // ✅ Save user object so header can show name
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
       alert("Login successful ✅");
@@ -68,12 +64,12 @@ function LoginPage() {
 
   return (
     <div className="bg-white">
-      {/* Logo */}
+
       <div className="flex justify-center mt-4 ">
         <img src="/Amazonlogo2.png" alt="Amazon" className="w-75" />
       </div>
 
-      {/* Main Card */}
+
       <div className="flex items-center justify-center font-amazon">
         <form
           className="w-[568px] h-[540px] border border-gray-300 rounded-2xl p-9 mb-6"
@@ -144,7 +140,7 @@ function LoginPage() {
         </form>
       </div>
 
-      {/* Bottom Section */}
+
       <div className="flex items-center justify-center font-amazon">
         <div className="w-[568px] h-[220px] mb-6 mt-2">
           <div className="flex items-center my-5">

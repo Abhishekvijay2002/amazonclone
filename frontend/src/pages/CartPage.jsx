@@ -101,17 +101,14 @@ export default function AmazonCart() {
       <div className="min-h-screen bg-[#f3f3f3] py-6">
         <div className="max-w-[1100px] mx-auto grid grid-cols-12 gap-4">
 
-          {/* LEFT */}
           <div className="col-span-9 space-y-4">
             <div className="bg-white border border-gray-300">
 
-              {/* Header */}
               <div className="flex justify-between px-5 py-3 border-b border-gray-200">
                 <h1 className="text-lg font-semibold">Shopping Cart</h1>
                 <span className="text-sm text-gray-600">Price</span>
               </div>
 
-              {/* States */}
               {loading && (
                 <p className="px-5 py-4 text-sm text-gray-500">
                   Loading your cart…
@@ -128,7 +125,6 @@ export default function AmazonCart() {
                 </p>
               )}
 
-              {/* Items */}
               {!loading &&
                 !error &&
                 items.map((item, index) => {
@@ -157,7 +153,6 @@ export default function AmazonCart() {
                         alt={product.title || "product"}
                       />
 
-                      {/* Content */}
                       <div className="flex-1 text-sm leading-5">
                         <p className="font-semibold">
                           {product.title || "Product title"}
@@ -171,7 +166,6 @@ export default function AmazonCart() {
                           Sold by: {product.sellerName || "Seller"}
                         </p>
 
-                        {/* Quantity buttons */}
                         <div className="flex items-center gap-3 mt-2 text-xs">
                           <div className="flex items-center gap-2 border border-gray-400 rounded px-2 py-[2px]">
                             <button
@@ -213,7 +207,6 @@ export default function AmazonCart() {
                         </div>
                       </div>
 
-                      {/* Price */}
                       <div className="text-sm font-semibold whitespace-nowrap">
                         ₹{(item.price || 0) * (item.quantity || 1)}
                       </div>
@@ -221,7 +214,6 @@ export default function AmazonCart() {
                   );
                 })}
 
-              {/* Subtotal */}
               {items.length > 0 && (
                 <div className="text-right px-5 py-3 border-t border-gray-200 text-sm">
                   Subtotal ({items.length} item{items.length > 1 ? "s" : ""}):{" "}
@@ -230,7 +222,6 @@ export default function AmazonCart() {
               )}
             </div>
 
-            {/* Info */}
             <div className="px-5 py-4 text-xs text-gray-700 leading-5">
               <p>
                 The price and availability of items are subject to change.
@@ -239,7 +230,6 @@ export default function AmazonCart() {
             </div>
           </div>
 
-          {/* RIGHT */}
           <div className="col-span-3 space-y-4">
             <div className="bg-white border border-gray-300 px-4 py-4">
               {items.length === 0 ? (

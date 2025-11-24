@@ -1,4 +1,4 @@
-// src/pages/AppliancePage.jsx
+
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -16,7 +16,6 @@ function Productlistpage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  // get numeric price safely (supports number or "₹12,990")
   const getNumericPrice = (price) => {
     if (typeof price === "number") return price;
     if (!price) return 0;
@@ -25,14 +24,13 @@ function Productlistpage() {
     return Number.isNaN(num) ? 0 : num;
   };
 
-  // fetch products once from backend
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         setLoading(true);
         setError("");
 
-        const res = await listProducts(); // GET /product
+        const res = await listProducts(); 
         setProducts(res.data.products || res.data || []);
       } catch (err) {
         console.error("Error loading products:", err);
@@ -48,8 +46,6 @@ function Productlistpage() {
 
     fetchProducts();
   }, []);
-
-  // price filter
   const filteredProducts = products.filter((p) => {
     const price = getNumericPrice(p.price);
 
@@ -62,16 +58,14 @@ function Productlistpage() {
     return true;
   });
 
-  // ✅ when card is clicked → go to product details page
   const handleCardClick = (id) => {
     if (!id) return;
-    // change path if you use something else
+
     navigate(`/product/${id}`);
   };
 
-  // ✅ when "Add to cart" is clicked → add product to cart (stay on same page)
   const handleAddToCart = async (e, id) => {
-    e.stopPropagation(); // IMPORTANT: avoid triggering card click
+    e.stopPropagation(); 
     if (!id) return;
 
     try {
@@ -89,7 +83,7 @@ function Productlistpage() {
 
   return (
     <div>
-      {/* TOP CATEGORY BAR */}
+
       <div className="w-full bg-white border-b">
         <div className="max-w-[1400px] mx-auto px-4 py-2">
           <div className="flex gap-5 text-sm text-gray-600">
@@ -234,7 +228,6 @@ function Productlistpage() {
                       onClick={() => handleCardClick(id)}
                       className="border border-gray-200 p-3 flex flex-col justify-between cursor-pointer hover:shadow-sm"
                     >
-                      {/* Image */}
                       <div className="h-[180px] flex items-center justify-center mb-2">
                         {imageSrc && (
                           <img
@@ -245,25 +238,21 @@ function Productlistpage() {
                         )}
                       </div>
 
-                      {/* Title */}
                       <p className="text-sm leading-snug line-clamp-3">
                         {product.title}
                       </p>
 
-                      {/* Rating */}
                       <div className="flex items-center gap-1 mt-1 text-xs">
                         <span className="text-yellow-500">⭐⭐⭐⭐☆</span>
                         <span className="text-blue-600">({rating})</span>
                       </div>
 
-                      {/* Bought info */}
                       {boughtText && (
                         <p className="text-[11px] text-gray-600 mt-1">
                           {boughtText}
                         </p>
                       )}
 
-                      {/* Price */}
                       <p className="text-lg font-bold mt-2">
                         ₹{getNumericPrice(product.price)}
                         <span className="align-top text-[11px] font-normal">
@@ -287,7 +276,7 @@ function Productlistpage() {
         </div>
       </div>
 
-      {/* Pagination (dummy) */}
+      {/* Pagination */}
       <div className="w-full flex justify-center py-8">
         <div className="flex items-center border border-gray-400 rounded-md overflow-hidden text-sm">
           <button className="px-4 py-2 text-gray-500 hover:bg-gray-100 flex items-center gap-1">
@@ -304,7 +293,6 @@ function Productlistpage() {
 
       <BrowsingHistory />
 
-      {/* SIGN-IN RECOMMENDATION */}
       <div className="bg-white border-t border-b border-gray-200 py-2">
         <div className="max-w-md mx-auto text-center">
           <p className="text-base font-semibold">

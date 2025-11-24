@@ -31,13 +31,12 @@ const products = [
 export default function SingleProductSlider() {
   const [index, setIndex] = useState(0);
 
-  // ✅ Auto slide logic
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) =>
         prev === products.length - 1 ? 0 : prev + 1
       );
-    }, 3000); // change slide every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
@@ -47,10 +46,9 @@ export default function SingleProductSlider() {
   return (
     <div className="w-full bg-gray-700 py-6">
       <div className="max-w-5xl mx-auto">
-        {/* Slider Card */}
+
         <div className="bg-white flex items-center gap-6 px-8 py-6 shadow transition-all duration-500">
-          
-          {/* Image */}
+      
           <div className="w-40 h-40 flex items-center justify-center">
             <img
               src={product.img}
@@ -59,7 +57,6 @@ export default function SingleProductSlider() {
             />
           </div>
 
-          {/* Text */}
           <div className="flex-1 text-sm">
             <h2 className="font-semibold text-base mb-1">
               {product.title}
