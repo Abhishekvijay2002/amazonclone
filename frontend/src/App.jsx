@@ -9,9 +9,9 @@ import CartPage from "./pages/CartPage"
 import OrderPage from "./pages/OrderPage"
 import BuyPage from "./pages/BuyPage"
 import AccountPage from "./pages/AccountPage";
-import AppliancePage from "./pages/productPage";
 import OrderSuccess from "./pages/OrderSuccess";
 import ProtectedRoute from "./ProtectedRoute";
+import Productlistpage from "./pages/Productlistpage";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
       },
       {
         path: "product",
-        element: <AppliancePage />,
+        element: <Productlistpage />,
       },
       {
         path: "/product/:productId",
