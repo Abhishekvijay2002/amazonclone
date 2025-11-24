@@ -1,52 +1,63 @@
+// src/components/google/GoogleAuthButton.jsx
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useGoogleLogin } from "@react-oauth/google";
-import { googleLogin } from "../../Services/UserApi"; 
-// import { useNavigate } from "react-router-dom";
+import { googleLogin } from "../../Services/UserApi";
 
-const GoogleAuthButton = () => {
+function GoogleAuthButton() {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
-    //  const navigate = useNavigate();
-
-  const login = useGoogleLogin({
-    flow: "auth-code",          // 👈 IMPORTANT: use auth-code flow
-    onSuccess: async (tokenResponse) => {
+  // Google OAuth hook
+  const loginWithGoogle = useGoogleLogin({
+    flow: "auth-code",
+    onSuccess: async (codeResponse) => {
       try {
-        // tokenResponse will contain a "code"
-        const { code } = tokenResponse;
+        setLoading(true);
+        console.log("Google OAuth success, code:", codeResponse);
 
-        // send the code to backend (NOT access_token)
-        const res = await googleLogin(code);
-
-        localStorage.setItem("token", res.data.token);
+        // Send code to backend
+        const res = await googleLogin(codeResponse.code);
         console.log("Google login success:", res.data);
+
+        // ✅ Save token + user (same as normal login)
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("user", JSON.stringify(res.data.user));
+
         alert("Google login successful ✅");
-        navigate("/");  
+        navigate("/"); // go home (or wherever you want)
       } catch (err) {
         console.error("Backend Google login error:", err);
-        alert("Google login failed");
+        const msg =
+          err?.response?.data?.error ||
+          err?.response?.data?.message ||
+          "Google login failed. Please try again.";
+        alert(msg);
+      } finally {
+        setLoading(false);
       }
     },
-    onError: () => {
-      console.error("Google login popup failed");
-      alert("Google login failed");
+    onError: (err) => {
+      console.error("Google OAuth error:", err);
+      alert("Google sign-in was cancelled or failed.");
     },
   });
 
-  // ⭐ Your styling stays exactly the same
   return (
     <button
       type="button"
-      onClick={() => login()}
-      className="relative flex items-center justify-center gap-2 border border-gray-400 rounded py-2 px-4 w-full mb-6"
+      onClick={() => loginWithGoogle()}
+      disabled={loading}
+      className="relative flex items-center justify-center gap-2 border border-gray-400 rounded py-2 px-4 w-full mb-6 disabled:opacity-70 disabled:cursor-not-allowed"
     >
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png"
         className="w-5 h-5 absolute left-4"
         alt="Google logo"
       />
-      Login with Google
+      {loading ? "Signing in with Google..." : "Login with Google"}
     </button>
   );
-};
+}
 
 export default GoogleAuthButton;
-

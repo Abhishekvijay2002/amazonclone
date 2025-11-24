@@ -10,8 +10,12 @@ import FourGridCategories from '../components/FourGridCategories'
 import Categorygrid from '../components/Categorygrid'
 import BudgetSliderSection from '../components/BudgetSliderSection'
 import SingleProductSlider from '../components/SingleProductSlider'
+import { useNavigate } from "react-router-dom";
+
 
 function HomePage() {
+  const navigate = useNavigate();
+
   return (
     <div>
 
@@ -39,27 +43,35 @@ function HomePage() {
   </div>
 </div>
       <BrowsingHistory />
-      <div className="bg-white border-t border-b border-gray-200 py-2">
-        <div className="max-w-md mx-auto text-center">
-          <p className="text-base font-semibold">
-            See personalized recommendations
-          </p>
-          <button className="mt-3 bg-[#ffd814] hover:bg-[#f7ca00] 
-  border-2 border-[#ffb700] rounded text-base font-semibold 
-  py-1 px-30 mx-auto block">
-            Sign in
-          </button>
-          <p className="text-base mt-2">
-            New customer?{" "}
-            <a
-              href="#"
-              className="text-[#007185] hover:text-[#c7511f]"
-            >
-              Start here.
-            </a>
-          </p>
-        </div>
-      </div>
+  <div className="bg-white border-t border-b border-gray-200 py-2">
+  <div className="max-w-md mx-auto text-center">
+    <p className="text-base font-semibold">
+      See personalized recommendations
+    </p>
+
+    <button
+      onClick={() => navigate("/register/login")}
+      className="mt-3 bg-[#ffd814] hover:bg-[#f7ca00] 
+      border-2 border-[#ffb700] rounded text-base font-semibold 
+      py-1 px-30 mx-auto block"
+    >
+      Sign in
+    </button>
+
+    <p className="text-base mt-2">
+      New customer?{" "}
+      <span
+        onClick={() => navigate("/register/signup")}
+        className="text-[#007185] hover:text-[#c7511f] cursor-pointer"
+      >
+        Start here.
+      </span>
+    </p>
+  </div>
+</div>
+
+<div className="grow h-px bg-gray-300 mb-5"></div>
+
       <div className="grow h-px bg-gray-300 mb-5"></div>
     </div>
   )

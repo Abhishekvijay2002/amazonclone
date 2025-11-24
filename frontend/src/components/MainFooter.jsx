@@ -3,7 +3,7 @@ import React from 'react'
 function MainFooter() {
   return (
     <div>
-      <footer className="bg-[#232F3E] text-white">
+      <footer className="bg-[#232F3E] text-white  w-full">
 
         <div className="bg-[#37475A] text-center py-6 text-lg cursor-pointer hover:bg-[#485769]">
           Back to Top

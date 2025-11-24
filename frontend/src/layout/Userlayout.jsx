@@ -5,12 +5,15 @@ import MainFooter from '../components/MainFooter'
 
 function Userlayout() {
   return (
-    <div>
-        <MainHeader/>
-      <Outlet/>
+    <div className="min-h-screen flex flex-col bg-[#131A22]">
+      <MainHeader/>
+      <div className="grow">
+        <Outlet/>
+      </div>
       <MainFooter/>
     </div>
   )
 }
+
 
 export default Userlayout

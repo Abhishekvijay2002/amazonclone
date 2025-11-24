@@ -1,87 +1,92 @@
-import {createBrowserRouter , RouterProvider} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import RegistrationLayout from "./layout/RegistrationLayout";
 import SignupPage from "./pages/SignupPage";
 import Userlayout from "./layout/Userlayout"
 import HomePage from "./pages/HomePage";
-import ProductPage from "./pages/ProductPage";
 import ProductDetailspage from "./pages/ProductDetailspage"
 import CartPage from "./pages/CartPage"
 import OrderPage from "./pages/OrderPage"
 import BuyPage from "./pages/BuyPage"
-import BusinessLayout from "./layout/BusinessLayout"
-import VerifyEmail from "./pages/VerifiedEmail"
-import BusinessAccountForm from "./pages/BusinessAccountForm"
+import AccountPage from "./pages/AccountPage";
+import AppliancePage from "./pages/productPage";
+import OrderSuccess from "./pages/OrderSuccess";
+import ProtectedRoute from "./ProtectedRoute";
 
 const router = createBrowserRouter([
   {
-   path : "/",
-   element:(
-   <Userlayout/>
-   ),
-   children : [
-    {
-      path: "",
-      element:<HomePage/> 
-    },
-    {
-      path: "product",
-      element: <ProductPage/>
-    },
-    {
-      path: "productdetails",
-      element: <ProductDetailspage/>
-    },
-    {
-      path: "cart",
-      element: <CartPage/>
-    },
-    {
-      path: "order",
-      element:<OrderPage/>
-    }
-   ]
-  },
-    {
-    path: "/register",
-    element:(
-        <RegistrationLayout/>
-    ),
+    path: "/",
+    element: <Userlayout />,
     children: [
-       {
-        path: "login",
-        element: <LoginPage/>,
+      {
+        path: "",
+        element: <HomePage />,
       },
       {
-        path: "signup",
-        element: <SignupPage/>,
+        path: "product",
+        element: <AppliancePage />,
       },
-    ]
-    },
-    {
-      path: "checkOut",
-      element: <BuyPage/>
-    },
-     {
-    path: "/business",
-    element:(
-        <BusinessLayout/>
-    ),
-    children: [
-       {
-        path: "verify",
-        element: <VerifyEmail/>,
+      {
+        path: "/product/:productId",
+        element: <ProductDetailspage />,
+      },
+      {
+        path: "cart",
+        element: (
+          <ProtectedRoute>
+            <CartPage />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "order",
+        element: (
+          <ProtectedRoute>
+            <OrderPage />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "account",
-        element: <BusinessAccountForm/>,
+        element: (
+         <ProtectedRoute>
+         <AccountPage/>,
+         </ProtectedRoute>
+          ),
       },
-    ]
-  }
-  
+    ],
+  },
+  {
+    path: "/register",
+    element: <RegistrationLayout />,
+    children: [
+      {
+        path: "login",
+        element: <LoginPage />,
+      },
+      {
+        path: "signup",
+        element: <SignupPage />,
+      },
+    ],
+  },
+  {
+    path: "checkOut",
+    element: (
+      <ProtectedRoute>
+        <BuyPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "ordersuccess",
+    element: (
+      <ProtectedRoute>
+        <OrderSuccess />
+      </ProtectedRoute>
+    ),
+  },
 ]);
-
-
 
 
 
@@ -89,10 +94,10 @@ function App() {
 
   return (
     <div>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
 
-</div>
-    
+    </div>
+
   );
 }
 

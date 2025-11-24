@@ -3,8 +3,8 @@ const dotenv = require('dotenv').config()
 
 const authenticateRole = (allowedRoles) => (req, res, next) => {
   try {
-    // const token = req.headers["authorization"]; 
-    const token = req.cookies.token;
+    const token = req.headers["authorization"]; 
+    // const token = req.cookies.token;
 
     if (!token) {
       return res.status(401).json({ msg: "JWT token not found" });

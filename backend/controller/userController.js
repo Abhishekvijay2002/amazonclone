@@ -6,65 +6,85 @@ const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 const axios = require("axios");
 
 
-// REGISTER
 const register = async (req, res) => {
   try {
-    const { name, email, password, confirmpassword } = req.body;
+    const { name, email, phone, password, confirmpassword } = req.body;
 
-    if (!name || !email || !password || !confirmpassword) {
-      return res.status(400).json({ error: "All fields are required" });
+    console.log("REGISTER BODY:", req.body);
+
+    // Basic validation
+    if (!name || !password || !confirmpassword || (!email && !phone)) {
+      return res.status(400).json({
+        error:
+          "Name, Email or Phone, Password and Confirm Password are required",
+      });
     }
 
     if (password !== confirmpassword) {
-      return res
-        .status(400)
-        .json({ error: "Password and confirm password must match" });
+      return res.status(400).json({
+        error: "Password and confirm password must match",
+      });
     }
 
-    const userExist = await userModel.findOne({ email });
+    // Build OR-clause only with present fields (prevents weird matches)
+    const searchConditions = [];
+    if (email) searchConditions.push({ email });
+    if (phone) searchConditions.push({ phone });
+
+    let userExist = null;
+    if (searchConditions.length > 0) {
+      userExist = await userModel.findOne({ $or: searchConditions });
+    }
+
     if (userExist) {
-      return res
-        .status(400)
-        .json({ error: "User already exists with this email" });
+      return res.status(400).json({
+        error: "User already exists with this email or phone number",
+      });
     }
 
     const hashedPassword = await hashPassword(password);
 
     const newUser = new userModel({
       name,
-      email,
       password: hashedPassword,
+      ...(email && { email }),
+      ...(phone && { phone }),
     });
 
     await newUser.save();
 
-    res.status(201).json({ message: "User registered successfully" });
+    return res.status(201).json({ message: "User registered successfully" });
   } catch (error) {
-    console.error(error);
-    res
+    console.error("REGISTER ERROR:", error);
+    return res
       .status(500)
       .json({ error: error.message || "Internal Server Error" });
   }
 };
 
-//LOGIN 
+
+
 const login = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email, password } = req.body; 
+    // here "email" can be either real email OR phone number
 
     if (!email || !password) {
       return res.status(400).json({ error: "All fields are required" });
     }
 
-    const userExist = await userModel.findOne({ email });
+    // ✅ Find user by email OR phone
+    const userExist = await userModel.findOne({
+      $or: [{ email }, { phone: email }],
+    });
+
     if (!userExist) {
-      return res.status(400).json({ error: "User not found with this email" });
+      return res
+        .status(400)
+        .json({ error: "User not found with this email or phone number" });
     }
 
-    const passwordMatch = await comparePassword(
-      password,
-      userExist.password
-    );
+    const passwordMatch = await comparePassword(password, userExist.password);
     if (!passwordMatch) {
       return res.status(400).json({ error: "Invalid password" });
     }
@@ -75,11 +95,11 @@ const login = async (req, res) => {
     const token = createToken(userExist.id, userExist.role);
 
     res.cookie("token", token, {
-    httpOnly: true,
-    secure: false,       
-    sameSite: "lax",
-    maxAge: 3 * 24 * 60 * 60 * 1000,
-  });
+      httpOnly: true,
+      secure: false, // change to true in production with HTTPS
+      sameSite: "lax",
+      maxAge: 3 * 24 * 60 * 60 * 1000,
+    });
 
     res.status(200).json({
       message: "Login successful",
@@ -93,6 +113,7 @@ const login = async (req, res) => {
       .json({ error: error.message || "Internal Server Error" });
   }
 };
+
 
 const logout = (req, res) => {
   try {
@@ -121,7 +142,6 @@ const googleAuth = async (req, res) => {
       return res.status(400).json({ error: "Authorization code is required" });
     }
 
-    // 1️⃣ Exchange code for tokens
     const tokenRes = await axios.post(
       "https://oauth2.googleapis.com/token",
       {

@@ -9,7 +9,7 @@ const productModel = require("../models/productModel");
 const addOrder = async (req, res) => {
   try {
     const userid = new mongoose.Types.ObjectId(req.userId.id);
-    const { address} = req.body;
+    const { address, paymentMethod } = req.body;
 
     // get cart
     const cart = await Cart.findOne({ userid }).populate("product.productid");
@@ -25,22 +25,22 @@ const addOrder = async (req, res) => {
     );
 
     // create order
-   const order = new Order({
-  user: userid,  
-  product: cart.product.map(item => ({
-    productid: item.productid,
-    price: item.price,
-    quantity: item.quantity
-  })),
-  totalAmount: totalAmount, 
-  address,
-  orderstatus: "pending"
-});
-
+    const order = new Order({
+      user: userid,
+      product: cart.product.map((item) => ({
+        productid: item.productid,
+        price: item.price,
+        quantity: item.quantity,
+      })),
+      totalAmount,
+      address,
+      paymentMethod, // ✅ added
+      orderstatus: "pending",
+    });
 
     await order.save();
 
-    // clear cart after order
+    // clear cart
     await Cart.findOneAndDelete({ userid });
 
     res.status(201).json({ message: "Order placed successfully", order });
@@ -55,9 +55,10 @@ const addOrder = async (req, res) => {
 // GET USER ORDERS
 const getOrders = async (req, res) => {
   try {
-    const userId = req.userId.id; // mongoose will cast string to ObjectId automatically
+    const userId = req.userId.id;
 
-    const orders = await Order.find({ user: userId }) // 👈 use "user", not "userId"
+    const orders = await Order.find({ user: userId })
+      .populate("product.productid")   // ✅ THIS LINE ADDED
       .sort({ createdAt: -1 });
 
     if (!orders.length) {
@@ -72,6 +73,7 @@ const getOrders = async (req, res) => {
       .json({ error: error.message || "Internal Server Error" });
   }
 };
+
 
 
 const getAllOrders = async (req, res) => {
