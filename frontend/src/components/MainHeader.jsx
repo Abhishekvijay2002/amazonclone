@@ -26,10 +26,10 @@ function MainHeader() {
             <img
               src="/amazonlogo3.png"
               alt="amazon logo"
-              className="h-12 w-auto my-2"
+              className="h-12 w-auto my-2 hover:border hover:border-white px-1 py-1"
             />
 
-            <div className="flex flex-col text-xs leading-tight">
+            <div className="flex flex-col text-xs  py-1 px-1 leading-tight hover:border hover:border-white">
               <span className="text-gray-400 pl-6 text-base">
                 Delivering to Surat 394210
               </span>
@@ -39,7 +39,7 @@ function MainHeader() {
             </div>
 
             <div className="flex grow max-w-lg  h-13 bg-white rounded-3xl">
-              <select className="bg-gray-200 text-black px-2 rounded-l text-xl">
+              <select className="bg-gray-200 text-black px-1 rounded-l text-xl">
                 <option>All</option>
               </select>
 
@@ -54,7 +54,7 @@ function MainHeader() {
               </button>
             </div>
 
-            <div className="flex items-center gap-1 mx-3">
+            <div className="flex items-center gap-1 px-3 py-2 hover:border hover:border-white">
               <img src="https://flagcdn.com/w40/in.png" className="w-7 h-6" />
               <span className="text-xl">EN</span>
             </div>
@@ -63,7 +63,7 @@ function MainHeader() {
 
             <Link
               to="/order"
-              className="flex flex-col text-xl leading-tight mx-3 cursor-pointer"
+              className="flex flex-col text-xl leading-tight px-1  py-1 cursor-pointer hover:border hover:border-white"
             >
               <span>Returns</span>
               <span className="text-xl">& Orders</span>
@@ -71,7 +71,7 @@ function MainHeader() {
 
             <Link
               to="/cart"
-              className="flex items-center gap-1 font-semibold text-xl cursor-pointer"
+              className="flex items-center gap-1 font-semibold text-xl cursor-pointer hover:border hover:border-white py-1 px-1"
             >
               <img src="/cart.png" className="w-15 h-15" />
               Cart

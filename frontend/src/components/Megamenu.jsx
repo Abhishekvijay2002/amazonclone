@@ -23,7 +23,7 @@ export default function AccountMegaMenu({ user }) {
   return (
     <div className="relative group">
       <button className="text-sm leading-tight" onClick={handleTriggerClick}>
-        <div className="flex flex-col text-xs leading-tight mx-3">
+        <div className="flex flex-col text-xs leading-tight mx-3 hover:border hover:border-white px-1 py-1">
           <span className="text-base">
             {isLoggedIn ? `Hello, ${firstName}` : "Hello, sign in"}
           </span>
