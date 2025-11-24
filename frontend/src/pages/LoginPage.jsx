@@ -81,7 +81,6 @@ function LoginPage() {
             <GoogleAuthButton/>
   </div>
 </div>
-<Footer />
 </div>
   )
 }
