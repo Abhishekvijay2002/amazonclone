@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Footer from '../components/footer';
 import GoogleAuthButton from '../components/google/GoogleAuthButton';
 
 function SignupPage() {
@@ -122,7 +121,6 @@ function SignupPage() {
           <GoogleAuthButton/>
         </div>
       </div>
-      <Footer />
     </div>
     </div>
   );
