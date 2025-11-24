@@ -11,7 +11,21 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
 
-app.use(cors()) 
+const allowedOrigins = [
+  process.env.FRONTEND_URL, 
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+      return callback(new Error("Not allowed by CORS"));
+    },
+    credentials: true,
+  })
+);
 
 mongoose.connect(process.env.database_connect).then((res) =>{
     console.log("DataBase Connection Successful");
