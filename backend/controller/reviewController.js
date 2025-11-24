@@ -5,9 +5,9 @@ const Product = require("../models/productModel");
 
 const createReview = async (req, res) => {
   try {
-    const userId = req.userId.id;          // from auth middleware
+    const userId = req.userId.id;         
     const { productId } = req.params;
-    const { rating, comment } = req.body;  // send { rating, comment } from frontend
+    const { rating, comment } = req.body;  
 
     if (!rating || !comment) {
       return res
@@ -18,7 +18,7 @@ const createReview = async (req, res) => {
     //  only DELIVERED orders can review 
     /*
     const deliveredOrder = await Order.findOne({
-      user: userId,                       // matches orderSchema field
+      user: userId,                
       "product.productid": productId,
       orderstatus: "delivered",
     });
@@ -66,10 +66,9 @@ const createReview = async (req, res) => {
       product: productId,
       user: userId,
       rating,
-      comment, // make sure reviewModel has a `comment` field
+      comment, 
     });
 
-    // 4. Recalculate product rating and ratingCount
     const stats = await Review.aggregate([
       { $match: { product: review.product } },
       {

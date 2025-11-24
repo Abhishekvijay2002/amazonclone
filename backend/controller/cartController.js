@@ -14,12 +14,10 @@ const addToCart = async (req, res) => {
 
     let cart = await cartModel.findOne({ userid });
 
-    // if no cart yet, create one
     if (!cart) {
       cart = new cartModel({ userid, product: [] });
     }
 
-    // check if product already in cart
     const productAlreadyExist = cart.product.some((item) =>
       item.productid.equals(productid)
     );
@@ -28,14 +26,12 @@ const addToCart = async (req, res) => {
       return res.status(400).json({ error: "Product already exists in cart" });
     }
 
-    // push new item
     cart.product.push({
       productid,
       price: product.price,
       quantity: 1,
     });
 
-    // recalc total
     cart.calculateTotalprice();
     await cart.save();
 
@@ -55,9 +51,8 @@ const getcart = async (req, res) => {
 
     const cart = await cartModel
       .findOne({ userid })
-      .populate("product.productid"); // ref: "Product" in model
+      .populate("product.productid"); 
 
-    // if cart not created yet, return empty cart instead of 404
     if (!cart) {
       return res
         .status(200)
@@ -145,14 +140,12 @@ const decreasequantity = async (req, res) => {
       return res.status(404).json({ error: "Product not in cart" });
     }
 
-    // decrease qty or remove item
     if (userCart.product[productIndex].quantity > 1) {
       userCart.product[productIndex].quantity -= 1;
     } else {
-      userCart.product.splice(productIndex, 1); // remove last item
+      userCart.product.splice(productIndex, 1); 
     }
 
-    // 🟢 If no items left, delete cart document
     if (userCart.product.length === 0) {
       await cartModel.deleteOne({ _id: userCart._id });
       return res
@@ -160,7 +153,6 @@ const decreasequantity = async (req, res) => {
         .json({ message: "Last item removed , so Cart is now empty", cart: null });
     }
 
-    // otherwise recalc total and save
     userCart.calculateTotalprice();
     await userCart.save();
 

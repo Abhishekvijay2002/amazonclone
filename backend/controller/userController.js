@@ -96,7 +96,7 @@ const login = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: false, // change to true in production with HTTPS
+      secure: false, 
       sameSite: "lax",
       maxAge: 3 * 24 * 60 * 60 * 1000,
     });
@@ -119,9 +119,9 @@ const logout = (req, res) => {
   try {
     res.cookie("token", "", {
       httpOnly: true,
-      expires: new Date(0),   // expire immediately
+      expires: new Date(0), 
       sameSite: "lax",
-      secure: false,          // true in production
+      secure: false,   
     });
 
     return res.status(200).json({ message: "Logout successful" });
@@ -132,8 +132,6 @@ const logout = (req, res) => {
 
 // GOOGLE AUTH 
 
-
-// GOOGLE AUTH WITH CLIENT SECRET (AUTH CODE FLOW)
 const googleAuth = async (req, res) => {
   try {
     const { code } = req.body;
@@ -156,7 +154,6 @@ const googleAuth = async (req, res) => {
 
     const { id_token, access_token } = tokenRes.data;
 
-    // 2️⃣ Verify ID token (more secure)
     const ticket = await client.verifyIdToken({
       idToken: id_token,
       audience: process.env.GOOGLE_CLIENT_ID,
@@ -169,7 +166,6 @@ const googleAuth = async (req, res) => {
       return res.status(400).json({ error: "No email returned from Google" });
     }
 
-    // 3️⃣ Find or create user
     let user = await userModel.findOne({ email });
 
     if (!user) {
@@ -185,7 +181,6 @@ const googleAuth = async (req, res) => {
     const userObj = user.toObject();
     delete userObj.password;
 
-    // 4️⃣ Create your own JWT
     const jwtToken = createToken(user._id, user.role);
 
     return res.status(200).json({

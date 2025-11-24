@@ -17,7 +17,6 @@ export const googleLogin = (code) => {
 
 // List all products
 export const listProducts = (params) => {
-  // params is optional (page, limit, filters...)
   return axiosInstance.get("/product", { params });
 };
 
@@ -55,7 +54,7 @@ export const decreaseCartQuantity = (productId) => {
 
 // Place order
 export const placeOrder = (orderData) => {
-  // orderData: { items, address, paymentMethod, ... }
+  // orderData: {  address, paymentMethod }
   return axiosInstance.post("/order/place", orderData);
 };
 
@@ -71,7 +70,7 @@ export const cancelOrder = (orderId, data = {}) => {
 
 // Add review for a product
 export const addReview = (productId, reviewData) => {
-  // reviewData: { rating, comment, ... }
+  // reviewData: { rating, comment, }
   return axiosInstance.post(`/review/add/${productId}`, reviewData);
 };
 // get review of a product 

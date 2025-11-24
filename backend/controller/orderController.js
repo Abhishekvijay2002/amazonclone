@@ -1,4 +1,3 @@
-// controllers/orderController.js
 
 const Order = require("../models/orderModel");
 const Cart = require("../models/cartModel");        
@@ -11,20 +10,17 @@ const addOrder = async (req, res) => {
     const userid = new mongoose.Types.ObjectId(req.userId.id);
     const { address, paymentMethod } = req.body;
 
-    // get cart
     const cart = await Cart.findOne({ userid }).populate("product.productid");
 
     if (!cart || cart.product.length === 0) {
       return res.status(400).json({ error: "Cart is empty" });
     }
 
-    // calculate total
     const totalAmount = cart.product.reduce(
       (sum, item) => sum + item.price * item.quantity,
       0
     );
 
-    // create order
     const order = new Order({
       user: userid,
       product: cart.product.map((item) => ({
@@ -34,13 +30,12 @@ const addOrder = async (req, res) => {
       })),
       totalAmount,
       address,
-      paymentMethod, // ✅ added
+      paymentMethod, 
       orderstatus: "pending",
     });
 
     await order.save();
 
-    // clear cart
     await Cart.findOneAndDelete({ userid });
 
     res.status(201).json({ message: "Order placed successfully", order });
@@ -58,7 +53,7 @@ const getOrders = async (req, res) => {
     const userId = req.userId.id;
 
     const orders = await Order.find({ user: userId })
-      .populate("product.productid")   // ✅ THIS LINE ADDED
+      .populate("product.productid")   
       .sort({ createdAt: -1 });
 
     if (!orders.length) {
