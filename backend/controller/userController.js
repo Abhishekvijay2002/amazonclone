@@ -1,6 +1,6 @@
 const userModel = require("../models/userModel");
-const { createToken } = require("../Utilities/generateToken");
-const { hashPassword,comparePassword} = require("../Utilities/passwordUtilities");
+const { createToken } = require("../utilities/generateToken");
+const { hashPassword,comparePassword} = require("../utilities/passwordUtilities");
 const { OAuth2Client } = require("google-auth-library");
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 const axios = require("axios");
