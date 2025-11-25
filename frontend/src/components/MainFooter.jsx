@@ -1,11 +1,19 @@
 import React from 'react'
 
 function MainFooter() {
+
+   const handleBackToTop = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth", 
+    });
+  };
   return (
     <div>
       <footer className="bg-[#232F3E] text-white  w-full">
 
-        <div className="bg-[#37475A] text-center py-6 text-lg cursor-pointer hover:bg-[#485769]">
+        <div className="bg-[#37475A] text-center py-6 text-lg cursor-pointer hover:bg-[#485769]" onClick={handleBackToTop}>
           Back to Top
         </div>
 
