@@ -1,7 +1,10 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Bikesoffers() {
   const sliderRef = useRef(null);
+   const navigate = useNavigate();
+
 
   const products = [
     {
@@ -56,7 +59,7 @@ export default function Bikesoffers() {
         </div>
         <a
           href="#"
-          className="text-sm text-[#007185] hover:text-[#c7511f]"
+          className="text-sm text-[#007185] hover:text-[#c7511f]" onClick={() => navigate("/product")}
         >
           See all offers
         </a>
@@ -77,7 +80,7 @@ export default function Bikesoffers() {
         >
           {products.map((item, index) => (
             <div
-              key={index}
+              key={index} onClick={() => navigate("/product")}
               className="min-w-[250px] flex items-center justify-center"
             >
               <img

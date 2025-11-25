@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function FourGridStyle3() {
+   const navigate = useNavigate();
+
   const keepShopping = [
     {
       img: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS1ufck4EYFKaGuiudcTLngTcF6ePC2mpOduNTP_qLolV08B9OAa03Es2bj8ttZ_1JCdivDb8c0kqsfGrWeGRKpLVt0Xw0ixTVDSM7oQd2H",
@@ -42,7 +45,7 @@ export default function FourGridStyle3() {
 
           <div className="space-y-3">
             {keepShopping.map((item, i) => (
-              <div key={i} className="flex gap-3">
+              <div key={i} className="flex gap-3" onClick={() => navigate("/product")}>
                 <div className="w-[90px] h-[100px] border border-gray-200 flex items-center justify-center bg-white">
                   <img
                     src={item.img}
@@ -58,7 +61,7 @@ export default function FourGridStyle3() {
             ))}
           </div>
 
-          <button className="text-sm text-[#007185] mt-4">
+          <button className="text-sm text-[#007185] mt-4" onClick={() => navigate("/product")}>
             See more
           </button>
         </div>
@@ -70,14 +73,14 @@ export default function FourGridStyle3() {
           </h2>
 
           <div className="border border-gray-200 h-[300px] flex items-center justify-center bg-white">
-            <img
+            <img onClick={() => navigate("/product")}
               src="https://m.media-amazon.com/images/I/51SP7RHxpcL._AC_UF1000,1000_QL80_.jpg"
               alt="Indoor plants"
               className="h-full w-auto object-cover"
             />
           </div>
 
-          <button className="text-sm text-[#007185] mt-4">
+          <button className="text-sm text-[#007185] mt-4" onClick={() => navigate("/product")}>
             See more
           </button>
         </div>
@@ -91,7 +94,7 @@ export default function FourGridStyle3() {
           <div className="grid grid-cols-2 gap-4 mt-2 mb-6">
             {mostLovedFashion.map((img, i) => (
               <div
-                key={i}
+                key={i} onClick={() => navigate("/product")}
                 className="h-[140px] flex items-center justify-center"
               >
                 <img
@@ -103,7 +106,7 @@ export default function FourGridStyle3() {
             ))}
           </div>
 
-          <button className="text-sm text-[#007185]">
+          <button className="text-sm text-[#007185]" onClick={() => navigate("/product")}>
             Explore more
           </button>
         </div>
@@ -113,7 +116,7 @@ export default function FourGridStyle3() {
             International brands
           </h2>
 
-          <div className="border border-gray-200 h-[300px] flex items-center justify-center bg-white">
+          <div className="border border-gray-200 h-[300px] flex items-center justify-center bg-white" onClick={() => navigate("/product")}>
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuNi41m5JlkngMtghg3mG14CHDtMMdNOF76Q&s"
               alt="International brands"
@@ -121,7 +124,7 @@ export default function FourGridStyle3() {
             />
           </div>
 
-          <button className="text-sm text-[#007185] mt-4">
+          <button className="text-sm text-[#007185] mt-4" onClick={() => navigate("/product")}>
             See all offers
           </button>
         </div>

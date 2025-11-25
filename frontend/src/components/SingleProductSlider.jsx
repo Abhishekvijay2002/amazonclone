@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const products = [
   {
@@ -30,6 +31,7 @@ const products = [
 
 export default function SingleProductSlider() {
   const [index, setIndex] = useState(0);
+ const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -47,7 +49,7 @@ export default function SingleProductSlider() {
     <div className="w-full bg-gray-700 py-6">
       <div className="max-w-5xl mx-auto">
 
-        <div className="bg-white flex items-center gap-6 px-8 py-6 shadow transition-all duration-500">
+        <div className="bg-white flex items-center gap-6 px-8 py-6 shadow transition-all duration-500" onClick={() => navigate("/product")}>
       
           <div className="w-40 h-40 flex items-center justify-center">
             <img

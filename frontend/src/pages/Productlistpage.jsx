@@ -11,6 +11,14 @@ import { listProducts, addToCart } from "../Services/UserApi";
 function Productlistpage() {
   const navigate = useNavigate();
 
+    useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant", 
+    });
+  }, []);
+
   const [products, setProducts] = useState([]);
   const [priceFilter, setPriceFilter] = useState("all");
   const [loading, setLoading] = useState(false);

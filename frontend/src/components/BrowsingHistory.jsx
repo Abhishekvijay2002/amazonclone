@@ -1,7 +1,9 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function BrowsingHistory() {
   const sliderRef = useRef(null);
+ const navigate = useNavigate();
 
   const products = [
     {
@@ -109,7 +111,7 @@ export default function BrowsingHistory() {
         >
           {products.map((item, index) => (
             <div
-              key={index}
+              key={index} onClick={() => navigate("/product")}
               className="min-w-[230px] max-w-[230px] shrink-0"
             >
               <div className="h-56 flex items-center justify-center mb-2 hover:border-4 hover:border-[#007185] 

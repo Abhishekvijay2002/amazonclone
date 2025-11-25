@@ -1,6 +1,9 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function BestGadgets() {
+   const navigate = useNavigate();
+
   const sliderRef = useRef(null);
 
   const products = [
@@ -70,7 +73,7 @@ export default function BestGadgets() {
         >
           {products.map((item, index) => (
             <div
-              key={index}
+              key={index} onClick={() => navigate("/product")}
               className="min-w-[250px] flex items-center justify-center"
             >
               <img

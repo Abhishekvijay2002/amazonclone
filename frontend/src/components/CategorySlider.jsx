@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const categories = [
     { id: 5, title: ["Watches"], img: "/images/watch.png" },
@@ -19,6 +20,8 @@ const categories = [
 
 export default function CategorySlider() {
     const sliderRef = useRef(null);
+     const navigate = useNavigate();
+
 
     const scrollLeftBtn = () => {
         sliderRef.current.scrollBy({
@@ -47,7 +50,7 @@ export default function CategorySlider() {
             >
                 {categories.map((cat) => (
                     <div
-                        key={cat.id}
+                        key={cat.id} onClick={() => navigate("/product")}
                         className="flex flex-col items-center shrink-0 cursor-pointer"
                     >
                         <div className="w-26 h-26 rounded-full bg-[#fbeae1] flex items-end justify-center overflow-hidden">

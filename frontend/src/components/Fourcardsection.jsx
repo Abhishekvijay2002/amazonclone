@@ -1,6 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function FourSectionGrid() {
+   const navigate = useNavigate();
+
+
   const data = [
     {
       title: "Best Sellers in Toys & Games",
@@ -87,7 +91,7 @@ export default function FourSectionGrid() {
               <img
                 key={i}
                 src={img}
-                alt=""
+                alt="" onClick={() => navigate("/product")}
                 className="w-10 h-10 border border-blue-400 rounded object-contain p-1"
               />
             ))}

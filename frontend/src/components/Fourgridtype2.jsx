@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Fourgridtype2() {
+   const navigate = useNavigate();
+
   return (
     <div className="bg-gray-700 py-4">
       <div className="max-w-[1500px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-2">
@@ -17,7 +20,7 @@ export default function Fourgridtype2() {
               { img: "https://static.zara.net/assets/public/5f6f/1b78/4ff84d1e85d1/c110dbf8ab77/07484088400-p/07484088400-p.jpg?ts=1750242196841&w=744&f=auto", price: "₹499" },
               { img: "https://static.zara.net/assets/public/b13d/2f63/3165481a82c6/62837dbe8d2a/08346774093-p/08346774093-p.jpg?ts=1753383119491&w=744&f=auto", price: "₹2,650" },
             ].map((item, i) => (
-              <div key={i}>
+              <div key={i} onClick={() => navigate("/product")}>
                 <div className="border border-gray-200 h-[140px] flex items-center justify-center bg-white">
                   <img src={item.img} className="h-full object-contain" />
                 </div>
@@ -26,7 +29,7 @@ export default function Fourgridtype2() {
             ))}
           </div>
 
-          <button className="text-sm text-[#007185] mt-3">See more</button>
+          <button className="text-sm text-[#007185] mt-3" onClick={() => navigate("/product")}>See more</button>
         </div>
 
         <div className="bg-white p-4 min-h-[460px]">
@@ -37,7 +40,7 @@ export default function Fourgridtype2() {
           <div className="border border-gray-200 h-60 flex items-center justify-center bg-white">
             <img
               src="https://images.indianexpress.com/2018/07/yeh-759.jpg"
-              className="h-full object-cover"
+              className="h-full object-cover" onClick={() => navigate("/product")}
             />
           </div>
 
@@ -51,7 +54,7 @@ export default function Fourgridtype2() {
             Best Sellers in Sports, Fitness & Outdoors
           </h2>
 
-          <div className="border border-gray-200 h-60 flex items-center justify-center bg-white">
+          <div className="border border-gray-200 h-60 flex items-center justify-center bg-white" onClick={() => navigate("/product")}>
             <img
               src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQPOB1XC8835jygGmdssvYDyO1XRKJprVRJrjJCFFb-4ofA9s6eNDc6MLfoIPPsRH7vLR5hTPLtJnIKXEdvVWV7uIPM25ljFKOaQm2RwsQ_jDT2boNKoBg2FQ"
               className="h-full object-contain"
@@ -67,7 +70,7 @@ export default function Fourgridtype2() {
           <div className="flex gap-2 mt-3">
             {[1, 2, 3, 4].map((_, i) => (
               <div
-                key={i}
+                key={i} onClick={() => navigate("/product")}
                 className="border border-blue-400 w-10 h-10 rounded flex items-center justify-center"
               >
                 <img
@@ -85,13 +88,13 @@ export default function Fourgridtype2() {
           </h2>
 
           <div className="border border-gray-200 h-60 flex items-center justify-center bg-white">
-            <img
+            <img onClick={() => navigate("/product")}
               src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcS-yDMpZhSCq5mcmBZoL-PVONtmEtJ5zJqRV4YV79pE2pA11iOJ9ooK3R_Qf4u1DLx7asS19xsrlHz56Q2yIMhjMltXgTxCtyWmhD-7s3sL19aA5cBvnk5l_A"
               className="h-full object-cover"
             />
           </div>
 
-          <button className="text-sm text-[#007185] mt-3">
+          <button className="text-sm text-[#007185] mt-3" onClick={() => navigate("/product")}>
             See more
           </button>
         </div>

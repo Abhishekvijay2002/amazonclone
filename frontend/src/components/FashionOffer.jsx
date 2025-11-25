@@ -1,7 +1,10 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function FashionOffer() {
   const sliderRef = useRef(null);
+   const navigate = useNavigate();
+
 
   const products = [
     {
@@ -54,8 +57,8 @@ export default function FashionOffer() {
         <div className="text-xl font-semibold">
          Related to items you've viewed
         </div>
-        <a
-          href="#"
+        <a onClick={() => navigate("/product")}
+          
           className="text-sm text-[#007185] hover:text-[#c7511f]"
         >
           See all
@@ -77,7 +80,7 @@ export default function FashionOffer() {
         >
           {products.map((item, index) => (
             <div
-              key={index}
+              key={index} onClick={() => navigate("/product")}
               className="min-w-[250px] flex items-center justify-center"
             >
               <img
