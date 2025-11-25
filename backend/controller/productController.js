@@ -1,6 +1,6 @@
 
 const productModel = require("../models/productModel");
-const uploadToCloudinary = require("../Utilities/imageUpload");
+const uploadToCloudinary = require("../utilities/imageUpload");
 
 // CREATE PRODUCT
 
